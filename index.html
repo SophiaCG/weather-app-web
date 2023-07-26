@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Russo+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Russo+One&display=swap"
       rel="stylesheet"
     />
 
@@ -21,9 +20,11 @@
           </div>
 
           <div class="main-text-container">
-            <h1>12ºF</h1>
-            <h3>Monday, 3:00pm</h3>
-            <h4>Mostly cloudy</h4>
+            <h1 id="temp">12ºF</h1>
+            <h2 id="city-name">Hello World</h2>
+            <h3 id="weekday-time">Monday, 3:00pm</h3>
+            <h3 id="day-month-year">July 26, 2023</h3>
+            <h4 id="todays-forecast">Mostly cloudy</h4>
           </div>
         </div>
       </div>
@@ -55,7 +56,7 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2>64º F</h2>
+                <h2 id="high-temp">64º F</h2>
               </div>
               <div class="widget-info-row">
                 <img
@@ -63,7 +64,7 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2>43º F</h2>
+                <h2 id="low-temp">43º F</h2>
               </div>
             </div>
           </div>
@@ -71,14 +72,14 @@
             <h3>Humidity</h3>
             <div class="widget-info-row">
               <img src="images/wet.png" alt="PNG Image" class="small-image" />
-              <h1>12%</h1>
+              <h1 id="humidity">12%</h1>
             </div>
           </div>
           <div id="wind-widget" class="info-widget">
             <h3>Wind Speed</h3>
             <div class="widget-info-row">
               <img src="images/wind.png" alt="PNG Image" class="small-image" />
-              <h1>7.70 km/h</h1>
+              <h1 id="wind-speed">7.70 km/h</h1>
             </div>
           </div>
           <div id="clouds-widget" class="info-widget">
@@ -89,7 +90,7 @@
                 alt="PNG Image"
                 class="small-image"
               />
-              <h1>100%</h1>
+              <h1 id="clouds">100%</h1>
             </div>
           </div>
           <div id="rain-widget" class="info-widget">
@@ -100,7 +101,7 @@
                 alt="PNG Image"
                 class="small-image"
               />
-              <h1>80%</h1>
+              <h1 id="rain">80%</h1>
             </div>
           </div>
           <div id="sunrise-sunset-widget" class="info-widget">
@@ -112,7 +113,7 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2>6:34am</h2>
+                <h2 id="sunrise">6:34am</h2>
               </div>
               <div class="widget-info-row">
                 <img
@@ -120,7 +121,7 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2>7:27pm</h2>
+                <h2 id="sunset">7:27pm</h2>
               </div>
             </div>
           </div>
@@ -128,6 +129,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
