@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-column">
+        <div class="widget-info-column">
+          <div class="image-container">
+            <img src="images/sun.png" alt="PNG Image" class="large-image" />
+          </div>
+
+          <div class="main-text-container">
+            <h1>12ºF</h1>
+            <h3>Monday, 3:00pm</h3>
+            <h4>Mostly cloudy</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="leftClick()">
+              <h3>Fº</h3>
+            </button>
+            <button type="button" class="toggle-btn" onclick="rightClick()">
+              <h3>Cº</h3>
+            </button>
+          </div>
+        </div>
+
+        <div class="heading-container">
+          <h1>Today's Highlights</h1>
+        </div>
+
+        <div class="widget-container">
+          <div id="temp-widget" class="info-widget">
+            <h3>High & Low Temp.</h3>
+            <div class="widget-info-column">
+              <div class="widget-info-row">
+                <img
+                  src="images/thermometer-up.png"
+                  alt="PNG Image"
+                  class="small-image"
+                />
+                <h2>64º F</h2>
+              </div>
+              <div class="widget-info-row">
+                <img
+                  src="images/thermometer-down.png"
+                  alt="PNG Image"
+                  class="small-image"
+                />
+                <h2>43º F</h2>
+              </div>
+            </div>
+          </div>
+          <div id="humidity-widget" class="info-widget">
+            <h3>Humidity</h3>
+            <div class="widget-info-row">
+              <img src="images/wet.png" alt="PNG Image" class="small-image" />
+              <h1>12%</h1>
+            </div>
+          </div>
+          <div id="wind-widget" class="info-widget">
+            <h3>Wind Speed</h3>
+            <div class="widget-info-row">
+              <img src="images/wind.png" alt="PNG Image" class="small-image" />
+              <h1>7.70 km/h</h1>
+            </div>
+          </div>
+          <div id="clouds-widget" class="info-widget">
+            <h3>Clouds</h3>
+            <div class="widget-info-row">
+              <img
+                src="images/partly-cloudy-day.png"
+                alt="PNG Image"
+                class="small-image"
+              />
+              <h1>100%</h1>
+            </div>
+          </div>
+          <div id="rain-widget" class="info-widget">
+            <h3>Rain</h3>
+            <div class="widget-info-row">
+              <img
+                src="images/moderate-rain.png"
+                alt="PNG Image"
+                class="small-image"
+              />
+              <h1>80%</h1>
+            </div>
+          </div>
+          <div id="sunrise-sunset-widget" class="info-widget">
+            <h3>Sunrise & Sunset</h3>
+            <div class="widget-info-column">
+              <div class="widget-info-row">
+                <img
+                  src="images/sunrise.png"
+                  alt="PNG Image"
+                  class="small-image"
+                />
+                <h2>6:34am</h2>
+              </div>
+              <div class="widget-info-row">
+                <img
+                  src="images/sunset.png"
+                  alt="PNG Image"
+                  class="small-image"
+                />
+                <h2>7:27pm</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
