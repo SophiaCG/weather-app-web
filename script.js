@@ -1,3 +1,17 @@
+const body = document.body;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentHour = new Date().getHours();
+
+  if (currentHour >= 7 && currentHour < 18) {
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
+  } else {
+    body.classList.remove("light-theme");
+    body.classList.add("dark-theme");
+  }
+});
+
 const apiKey = "";
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=${apiKey}`;
 
@@ -127,11 +141,11 @@ const symbolLabel = document.getElementById("symbol-label");
 const unitLabel = document.getElementById("unit-label");
 
 fahrenheitButton.style.color = "black";
-celsiusButton.style.color = "white";
+celsiusButton.style.color = "gray";
 
 function leftClick() {
   fahrenheitButton.style.color = "black";
-  celsiusButton.style.color = "white";
+  celsiusButton.style.color = "gray";
   btn.style.left = "0";
   symbolLabel.textContent = "F";
   unitLabel.textContent = "mph";
@@ -142,7 +156,7 @@ function leftClick() {
 }
 
 function rightClick() {
-  fahrenheitButton.style.color = "white";
+  fahrenheitButton.style.color = "gray";
   celsiusButton.style.color = "black";
   btn.style.left = "50px";
   symbolLabel.textContent = "C";
@@ -153,12 +167,14 @@ function rightClick() {
   // location.reload();
 }
 
+const iconElement = document.getElementById("icon-element");
+const circleContainer = document.getElementById("circle-container");
+iconElement.style.color = "#2e2e38";
+circleContainer.style.backgroundColor = "#c8e5e7";
 let isSun = true;
 
 function toggleIcon() {
   console.log(isSun);
-  const iconElement = document.getElementById("icon-element");
-  const circleContainer = document.getElementById("circle-container");
 
   // Check the current icon class
   if (isSun) {
@@ -167,6 +183,8 @@ function toggleIcon() {
     iconElement.classList.add("fa-moon");
     circleContainer.style.backgroundColor = "#2e2e38";
     iconElement.style.color = "#c8e5e7";
+    body.classList.remove("light-theme");
+    body.classList.add("dark-theme");
     isSun = !isSun;
   } else {
     // If it's a moon icon, change to the sun icon
@@ -174,6 +192,8 @@ function toggleIcon() {
     iconElement.classList.add("fa-sun");
     iconElement.style.color = "#2e2e38";
     circleContainer.style.backgroundColor = "#c8e5e7";
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
     isSun = !isSun;
   }
 }
