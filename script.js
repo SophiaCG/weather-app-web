@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "59bf342183bb218f56205aa0ebe4f56d";
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=${apiKey}`;
 
 function callAPI(apiUrl) {
@@ -13,6 +13,7 @@ function callAPI(apiUrl) {
     })
     .then((data) => {
       processWeatherData(data);
+      getWeatherImage(data.weather[0].id);
     })
     .catch((error) => {
       // Handle any errors that occurred during the fetch
@@ -42,6 +43,35 @@ function processWeatherData(data) {
   document.getElementById("rain").textContent = `${data.rain["1h"]} in.`;
   document.getElementById("sunrise").textContent = formatTime(data.sys.sunrise);
   document.getElementById("sunset").textContent = formatTime(data.sys.sunset);
+}
+
+function getWeatherImage(code) {
+  const imageElement = document.getElementById("weather-image");
+  switch (true) {
+    case code >= 200 && code < 300:
+      imageElement.setAttribute("src", "images/storm-with-heavy-rain.png");
+      break;
+    case code >= 200 && code < 300:
+      imageElement.setAttribute("src", "images/moderate-rain.png");
+      break;
+    case code >= 500 && code < 600:
+      imageElement.setAttribute("src", "images/heavy-rain.png");
+      break;
+    case code >= 600 && code < 700:
+      imageElement.setAttribute("src", "images/snow.png");
+      break;
+    case code >= 700 && code < 800:
+      imageElement.setAttribute("src", "images/dust.png");
+      break;
+    case code == 800:
+      imageElement.setAttribute("src", "images/sun.png");
+      break;
+    case code > 800:
+      imageElement.setAttribute("src", "images/partly-cloudy-day.png");
+      break;
+    default:
+      imageElement.setAttribute("src", "images/dust.png");
+  }
 }
 
 function capitalizeFirstLetter(str) {
