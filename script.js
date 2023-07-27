@@ -1,4 +1,4 @@
-const apiKey = "59bf342183bb218f56205aa0ebe4f56d";
+const apiKey = "";
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=${apiKey}`;
 
 function callAPI(apiUrl) {
@@ -110,6 +110,16 @@ function formatTime(date) {
   return dayMonthYear;
 }
 
+const searchInput = document.getElementById("search-input");
+searchInput.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    const searchTerm = event.target.value;
+    callAPI(
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=imperial&appid=${apiKey}`
+    );
+  }
+});
+
 var btn = document.getElementById("btn");
 const fahrenheitButton = document.getElementById("fahrenheit-label");
 const celsiusButton = document.getElementById("celsius-label");
@@ -141,4 +151,29 @@ function rightClick() {
     `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${apiKey}`
   );
   // location.reload();
+}
+
+let isSun = true;
+
+function toggleIcon() {
+  console.log(isSun);
+  const iconElement = document.getElementById("icon-element");
+  const circleContainer = document.getElementById("circle-container");
+
+  // Check the current icon class
+  if (isSun) {
+    // If it's a sun icon, change to the moon icon
+    iconElement.classList.remove("fa-sun");
+    iconElement.classList.add("fa-moon");
+    circleContainer.style.backgroundColor = "#2e2e38";
+    iconElement.style.color = "#c8e5e7";
+    isSun = !isSun;
+  } else {
+    // If it's a moon icon, change to the sun icon
+    iconElement.classList.remove("fa-moon");
+    iconElement.classList.add("fa-sun");
+    iconElement.style.color = "#2e2e38";
+    circleContainer.style.backgroundColor = "#c8e5e7";
+    isSun = !isSun;
+  }
 }

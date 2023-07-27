@@ -92,6 +92,51 @@ body {
   padding-left: 80px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-top: 20px;
+  width: 90%;
+}
+
+.search-container {
+  width: 350px;
+  display: flex;
+  padding-right: 20px;
+}
+
+#search-input {
+  background-color: var(--widgetColor);
+  border: 1px solid var(--widgetColor);
+  color: var(--mainText);
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+.search-icon {
+  position: absolute;
+  padding: 15px;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+#circle-container {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ccc;
+  padding: 13px;
+  margin-left: 15px;
+}
+
+i {
+  font-size: 24px; /* Adjust the font size to make the icon bigger */
+  color: gray;
+}
+
 .widget-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -132,7 +177,6 @@ body {
 
 .button-box {
   width: 110px;
-  margin: 35px auto;
   position: relative;
   border-radius: 30px;
   background: var(--widgetColor);

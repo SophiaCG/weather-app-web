@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Russo+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
     <title>Weather App</title>
   </head>
@@ -38,14 +42,29 @@
       </div>
 
       <div class="right-column">
-        <div class="form-box">
-          <div class="button-box">
-            <div id="btn"></div>
-            <button type="button" class="toggle-btn" onclick="leftClick()">
-              <h3 id="fahrenheit-label">Fº</h3>
-            </button>
-            <button type="button" class="toggle-btn" onclick="rightClick()">
-              <h3 id="celsius-label">Cº</h3>
+        <div class="header">
+          <div class="search-container">
+            <span class="search-icon">
+              <i class="fas fa-search"></i>
+            </span>
+
+            <input type="text" id="search-input" placeholder="Search..." />
+          </div>
+
+          <div class="form-box">
+            <div class="button-box">
+              <div id="btn"></div>
+              <button type="button" class="toggle-btn" onclick="leftClick()">
+                <h3 id="fahrenheit-label">Fº</h3>
+              </button>
+              <button type="button" class="toggle-btn" onclick="rightClick()">
+                <h3 id="celsius-label">Cº</h3>
+              </button>
+            </div>
+          </div>
+
+          <div id="circle-container" onclick="toggleIcon()">
+              <i id="icon-element" class="fas fa-sun"></i>
             </button>
           </div>
         </div>
