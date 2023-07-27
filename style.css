@@ -72,6 +72,11 @@ body {
   color: var(--mainText);
 }
 
+.label-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
 .right-column {
   flex: 75%;
   background-color: var(--boxColor);

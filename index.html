@@ -20,7 +20,10 @@
           </div>
 
           <div class="main-text-container">
-            <h1 id="temp">12ºF</h1>
+            <div class="label-container">
+              <h1 id="temp">12º</h1>
+              <h1 id="symbol-label">F</h1>
+            </div>
             <h2 id="city-name">Hello World</h2>
             <h3 id="weekday-time">Monday, 3:00pm</h3>
             <h3 id="day-month-year">July 26, 2023</h3>
@@ -34,10 +37,10 @@
           <div class="button-box">
             <div id="btn"></div>
             <button type="button" class="toggle-btn" onclick="leftClick()">
-              <h3>Fº</h3>
+              <h3 id="fahrenheit-label">Fº</h3>
             </button>
             <button type="button" class="toggle-btn" onclick="rightClick()">
-              <h3>Cº</h3>
+              <h3 id="celsius-label">Cº</h3>
             </button>
           </div>
         </div>
@@ -56,7 +59,10 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2 id="high-temp">64º F</h2>
+                <div class="label-container">
+                  <h2 id="high-temp">64º</h2>
+                  <h2 id="symbol-label">F</h2>
+                </div>
               </div>
               <div class="widget-info-row">
                 <img
@@ -64,7 +70,10 @@
                   alt="PNG Image"
                   class="small-image"
                 />
-                <h2 id="low-temp">43º F</h2>
+                <div class="label-container">
+                  <h2 id="low-temp">43º</h2>
+                  <h2 id="symbol-label">F</h2>
+                </div>
               </div>
             </div>
           </div>
@@ -79,7 +88,10 @@
             <h3>Wind Speed</h3>
             <div class="widget-info-row">
               <img src="images/wind.png" alt="PNG Image" class="small-image" />
-              <h1 id="wind-speed">7.70 km/h</h1>
+              <div class="label-container">
+                <h1 id="wind-speed">7.70</h1>
+                <h1 id="unit-label">mph</h1>
+              </div>
             </div>
           </div>
           <div id="clouds-widget" class="info-widget">
@@ -129,6 +141,6 @@
       </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
